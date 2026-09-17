@@ -28,6 +28,29 @@
       font-size: 0.95rem;
       border: 1px solid #45475a;
     }
+    #btnReset {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #45475a;
+      background: #313244;
+      color: #cdd6f4;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      font-family: inherit;
+    }
+    #btnReset:hover {
+      background: #45475a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    #btnReset:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
@@ -35,7 +58,8 @@
   <div class="badge">Desarrollado en Ubuntu 24.04 LTS &amp; VS Code</div>
   <button id="btnContador" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 8px; border: none; background: #89b4fa; color: #11111b; font-weight: bold; cursor: pointer; transition: transform 0.1s;">
   Clics: 0
-</button>
+  </button>
+  <button id="btnReset">Reiniciar contador</button>
 
 <script>
   let clics = 0;
@@ -46,6 +70,11 @@
     boton.textContent = `Clics: ${clics}`;
     boton.style.transform = 'scale(0.95)';
     setTimeout(() => boton.style.transform = 'scale(1)', 100);
+  });
+
+  document.getElementById('btnReset').addEventListener('click', () => {
+    clics = 0;
+    boton.textContent = `Clics: ${clics}`;
   });
 </script>
 </body>
