@@ -33,5 +33,20 @@
 <body>
   <h1>¡Hola mundo! Servidor en vivo funcionando al 100%</h1>
   <div class="badge">Desarrollado en Ubuntu 24.04 LTS &amp; VS Code</div>
+  <button id="btnContador" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 8px; border: none; background: #89b4fa; color: #11111b; font-weight: bold; cursor: pointer; transition: transform 0.1s;">
+  Clics: 0
+</button>
+
+<script>
+  let clics = 0;
+  const boton = document.getElementById('btnContador');
+
+  boton.addEventListener('click', () => {
+    clics++;
+    boton.textContent = `Clics: ${clics}`;
+    boton.style.transform = 'scale(0.95)';
+    setTimeout(() => boton.style.transform = 'scale(1)', 100);
+  });
+</script>
 </body>
 </html>
